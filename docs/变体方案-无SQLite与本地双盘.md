@@ -222,3 +222,10 @@ sealed record RootProfile(
 | V6 | 三种 `state.provider` 跑同一操作序列 | 产出的计划逐条相同（等价性） |
 | V7 | 断电模拟（kill -9）三次 | 无损坏基线、无残留 tmp、正确重传 |
 | V8 | 本地双盘 + NAS 两对同时运行 | 互不干扰，总内存仍 < 50MB |
+
+
+---
+
+## v2.0 统一修订（2026-11-23）
+
+本方案中的“两路径对”按对等端点理解，默认 TwoWay 双向；必须支持 NAS → 本地盘与本地盘 → NAS。NAS/SMB 通过 UNC 或映射盘访问，不安装 NAS Agent；NAS 侧监控使用 FSW 提示与周期对账，不使用 USN。默认状态后端仍为无 SQLite 的 journal + snapshot。具体范围以 产品定义与开发基线-v2.md 为准。
