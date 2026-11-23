@@ -1,0 +1,28 @@
+# ---- 构建产物 ----
+bin/
+obj/
+artifacts/
+publish/
+out/
+*.user
+*.suo
+.vs/
+
+# ---- 运行时数据（不含源码，绝不入库）----
+data/
+logs/
+reports/
+trash/
+*.filesync-tmp
+firstrun.idx
+firstrun.paths
+state.journal
+state.snapshot
+
+# ---- 系统/编辑器 ----
+Thumbs.db
+desktop.ini
+.DS_Store
+.idea/
+.vscode/
+*.swp
